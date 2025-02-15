@@ -9,93 +9,55 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            text-align: center;
             background-color: #f8f8f8;
-            color: #333;
         }
         .container {
-            width: 90%;
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
-        .header {
-            padding: 20px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-        .hero {
-            background-color: #fff;
-            padding: 40px 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        .hero img {
-            width: 100%;
-            max-width: 400px;
-            border-radius: 10px;
-        }
-        .hero-text {
-            display: inline-block;
-            background-color: #ff69b4;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 50%;
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
-        .cta-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 15px 30px;
-            background-color: #ff69b4;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-        }
-        .features, .price {
-            margin-top: 40px;
+            max-width: 600px;
+            margin: 0 auto;
             padding: 20px;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .footer {
-            margin-top: 40px;
-            padding: 20px;
-            font-size: 14px;
+        h1 {
+            color: #ff4d79;
+        }
+        .feature {
+            margin: 20px 0;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff4d79;
+        }
+        .cta {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #ff4d79;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .cta:hover {
+            background: #e6005c;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">韓国風コスメ</div>
-        
-        <div class="hero">
-            <img src="cosmetic.jpg" alt="韓国風コスメ">
-            <div class="hero-text">あなたの推し活をもっと輝かせる✨</div>
-            <p>韓国アイドルのような美しい肌へ。軽くて潤う、魅力的な仕上がり。</p>
-            <a href="#purchase" class="cta-button">今すぐ購入</a>
+        <h1>韓国アイドルのような美肌へ✨</h1>
+        <p>話題の韓国コスメがついに日本上陸！</p>
+        <div class="feature">
+            <h2>💖 特徴 💖</h2>
+            <p>・韓国アイドルのメイク術に基づいた処方</p>
+            <p>・スキンケアしながら美しい仕上がり</p>
+            <p>・日本限定カラー展開</p>
         </div>
-        
-        <div class="features">
-            <h3>特徴</h3>
-            <ul>
-                <li>軽やかでナチュラルな仕上がり</li>
-                <li>保湿成分配合でしっとり</li>
-                <li>長時間キープできる持続力</li>
-            </ul>
-        </div>
-        
-        <div class="price" id="purchase">
-            <h3>価格</h3>
-            <p>¥3,980（税込）</p>
-            <a href="#" class="cta-button">購入する</a>
-        </div>
-        
-        <div class="footer">&copy; 2025 韓国風コスメ. All rights reserved.</div>
+        <div class="price">特別価格：2,980円（税込）</div>
+        <a href="#" class="cta">今すぐお問い合わせ</a>
     </div>
 </body>
 </html>

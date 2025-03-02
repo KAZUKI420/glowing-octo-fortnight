@@ -3,899 +3,539 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>エコラックス ボタニカルボディソープ | 12時間持続の贅沢な香り</title>
+    <title>クリーンキッチン - 小規模飲食店のHACCP対応をサポート</title>
     <style>
         :root {
-            --primary: #2c7d50;
-            --primary-light: #4c9d70;
-            --secondary: #f8f5e9;
-            --accent: #d6a75c;
-            --text: #333333;
-            --light-text: #666666;
+            --main-color: #1E88E5;
+            --accent-color: #E53935;
+            --light-gray: #F5F5F5;
+            --dark-gray: #333333;
+            --white: #FFFFFF;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
         }
         
         body {
-            color: var(--text);
             line-height: 1.6;
-            background-color: #ffffff;
+            color: var(--dark-gray);
+            background-color: var(--white);
         }
         
-        .container {
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
         
-        /* ヘッダー */
-        header {
-            background: linear-gradient(rgba(44, 125, 80, 0.8), rgba(44, 125, 80, 0.8)), url("/api/placeholder/1200/600") center/cover;
-            color: white;
-            padding: 120px 0 80px;
-            text-align: center;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--main-color);
         }
         
-        .catchcopy {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.3;
+        .logo span {
+            color: var(--accent-color);
         }
         
-        .subcopy {
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-        
-        .product-title {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            font-weight: 500;
-        }
-        
-        .product-image {
-            max-width: 80%;
-            margin: 0 auto 40px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .cta-buttons {
+        nav ul {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-            flex-wrap: wrap;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--main-color);
         }
         
         .cta-button {
-            display: inline-block;
-            padding: 15px 35px;
-            border-radius: 50px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
         
-        .primary-cta {
-            background-color: var(--accent);
-            color: white;
+        .cta-button:hover {
+            background-color: #C62828;
         }
         
-        .primary-cta:hover {
-            background-color: #c0903e;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(214, 167, 92, 0.4);
+        main {
+            margin-top: 80px;
         }
         
-        .secondary-cta {
-            background-color: transparent;
-            color: white;
-            border: 2px solid white;
+        .hero {
+            background: linear-gradient(rgba(30, 136, 229, 0.8), rgba(30, 136, 229, 0.8)), url('/api/placeholder/1200/500') center/cover no-repeat;
+            color: var(--white);
+            padding: 100px 5%;
+            text-align: center;
         }
         
-        .secondary-cta:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 20px;
         }
         
-        /* セクション共通 */
-        section {
-            padding: 80px 0;
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
             margin-bottom: 50px;
-            position: relative;
-            color: var(--primary);
         }
         
-        .section-title:after {
-            content: "";
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent);
-            margin: 15px auto 0;
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--main-color);
+            margin-bottom: 15px;
         }
         
-        /* 導入文 */
-        .intro {
-            background-color: var(--secondary);
-            text-align: center;
-            padding: 60px 0;
-        }
-        
-        .intro p {
-            font-size: 1.3rem;
+        .section-title p {
             max-width: 800px;
             margin: 0 auto;
-            color: var(--primary);
+            color: #666;
         }
         
-        /* 商品特徴 */
-        .features {
-            background-color: white;
+        .haccp-info {
+            background-color: var(--light-gray);
         }
         
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        .info-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
             gap: 40px;
-            margin-top: 40px;
         }
         
-        .feature-item {
+        .info-item {
+            flex: 1 1 300px;
             text-align: center;
-            padding: 30px 20px;
+            padding: 30px;
+            background-color: var(--white);
             border-radius: 10px;
-            transition: all 0.3s ease;
-            background-color: #f9f9f9;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
         
-        .feature-item:hover {
+        .info-item:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .feature-icon {
+        .info-item img {
             width: 80px;
             height: 80px;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--primary-light);
-            border-radius: 50%;
+            margin-bottom: 20px;
         }
         
-        .feature-icon svg {
-            width: 40px;
-            height: 40px;
-            fill: white;
-        }
-        
-        .feature-title {
-            font-size: 1.2rem;
+        .info-item h3 {
+            color: var(--main-color);
             margin-bottom: 15px;
-            color: var(--primary);
         }
         
-        .feature-desc {
-            color: var(--light-text);
-            font-size: 0.95rem;
+        .products {
+            background-color: var(--white);
         }
         
-        /* 使用方法 */
-        .usage {
-            background-color: var(--secondary);
-        }
-        
-        .usage-content {
+        .product-cards {
             display: flex;
-            align-items: center;
-            gap: 50px;
             flex-wrap: wrap;
-        }
-        
-        .usage-video {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .usage-steps {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .step {
-            margin-bottom: 25px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .step-number {
-            background-color: var(--primary);
-            color: white;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            font-weight: bold;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        
-        .step-content h4 {
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-        
-        /* 成分説明 */
-        .ingredients {
-            background-color: white;
-        }
-        
-        .ingredients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
         
-        .ingredient-card {
+        .product-card {
+            flex: 1 1 300px;
+            background-color: var(--white);
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            max-width: 350px;
         }
         
-        .ingredient-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        .product-card:hover {
+            transform: translateY(-10px);
         }
         
-        .ingredient-image {
+        .product-image {
             height: 200px;
-            background-color: #f0f0f0;
-        }
-        
-        .ingredient-info {
-            padding: 20px;
-        }
-        
-        .ingredient-name {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .qr-info {
-            margin-top: 40px;
-            text-align: center;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-        }
-        
-        .qr-code {
-            max-width: 120px;
-            margin: 0 auto 15px;
-        }
-        
-        /* 香り */
-        .fragrances {
-            background-color: var(--secondary);
-        }
-        
-        .fragrance-cards {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-        
-        .fragrance-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            width: 300px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .fragrance-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .fragrance-image {
-            height: 180px;
-            background-color: #f0f0f0;
-        }
-        
-        .fragrance-info {
-            padding: 20px;
-        }
-        
-        .fragrance-name {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .ar-feature {
-            text-align: center;
-            padding: 30px;
-            background-color: white;
-            border-radius: 10px;
-            margin-top: 40px;
-        }
-        
-        .ar-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
-        }
-        
-        /* 顧客の声 */
-        .testimonials {
-            background-color: white;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 30px;
+            background-size: cover;
+            background-position: center;
             position: relative;
         }
         
-        .testimonial-card:before {
-            content: """;
+        .badge {
             position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 5rem;
-            color: rgba(44, 125, 80, 0.1);
-            font-family: serif;
-        }
-        
-        .testimonial-content {
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            background-color: #e0e0e0;
-        }
-        
-        .expert-card {
-            margin-top: 50px;
-            background-color: var(--primary-light);
-            color: white;
-            border-radius: 10px;
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .expert-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            background-color: white;
-            flex-shrink: 0;
-        }
-        
-        /* サステナビリティ */
-        .sustainability {
-            background-color: var(--secondary);
-        }
-        
-        .sustainability-content {
-            display: flex;
-            gap: 50px;
-            flex-wrap: wrap;
-        }
-        
-        .sustainability-info {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .sustainability-image {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .eco-item {
-            margin-bottom: 25px;
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .eco-icon {
-            width: 40px;
-            height: 40px;
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--primary);
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-        
-        .eco-icon svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-        
-        /* 価格 */
-        .pricing {
-            background-color: white;
-        }
-        
-        .price-options {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-bottom: 50px;
-        }
-        
-        .price-card {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            padding: 40px 30px;
-            width: 300px;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-        }
-        
-        .price-card:hover {
-            transform: scale(1.03);
-            border-color: var(--primary-light);
-        }
-        
-        .price-card.featured {
-            border-color: var(--primary);
-            position: relative;
-        }
-        
-        .price-card.featured:before {
-            content: "おすすめ";
-            position: absolute;
-            top: -15px;
-            right: 30px;
-            background-color: var(--accent);
-            color: white;
-            padding: 5px 15px;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 5px 10px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 12px;
             font-weight: bold;
         }
         
-        .price-title {
-            font-size: 1.3rem;
+        .product-content {
+            padding: 25px;
+        }
+        
+        .product-content h3 {
+            color: var(--main-color);
             margin-bottom: 10px;
-            color: var(--primary);
+        }
+        
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        
+        .product-button {
+            display: block;
             text-align: center;
+            background-color: var(--main-color);
+            color: var(--white);
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
         
-        .price-amount {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 20px;
-            color: var(--text);
+        .product-button:hover {
+            background-color: #1565C0;
         }
         
-        .price-amount small {
-            font-size: 1rem;
-            color: var(--light-text);
+        .testimonials {
+            background-color: var(--light-gray);
         }
         
-        .price-features {
-            margin-bottom: 30px;
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
         }
         
-        .price-feature {
-            margin-bottom: 10px;
+        .testimonial {
+            flex: 1 1 300px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 350px;
+        }
+        
+        .testimonial-header {
             display: flex;
             align-items: center;
-        }
-        
-        .price-feature svg {
-            width: 16px;
-            height: 16px;
-            fill: var(--primary);
-            margin-right: 10px;
-            flex-shrink: 0;
-        }
-        
-        .price-cta {
-            text-align: center;
-        }
-        
-        .guarantee {
-            text-align: center;
-            margin-top: 50px;
-            padding: 30px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-        }
-        
-        .guarantee-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 20px;
-        }
-        
-        .sample-form {
-            max-width: 600px;
-            margin: 50px auto 0;
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .form-title {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--primary);
-        }
-        
-        .form-group {
             margin-bottom: 20px;
         }
         
-        .form-label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
+        .testimonial-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
         }
         
-        .form-input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
+        .testimonial-name h4 {
+            color: var(--main-color);
         }
         
-        .form-submit {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
+        .testimonial-name p {
+            font-size: 14px;
+            color: #666;
         }
         
-        .form-submit:hover {
-            background-color: var(--primary-light);
+        .testimonial-text {
+            position: relative;
+            font-style: italic;
         }
         
-        /* FAQ */
-        .faq {
-            background-color: var(--secondary);
+        .testimonial-text::before {
+            content: """;
+            font-size: 60px;
+            color: var(--main-color);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: -15px;
         }
         
-        .faq-list {
+        .cta-section {
+            background-color: var(--main-color);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 5%;
+        }
+        
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
             max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        footer {
+            background-color: var(--dark-gray);
+            color: var(--white);
+            padding: 50px 5%;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
-        .faq-item {
+        .footer-column {
+            flex: 1 1 200px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            color: var(--white);
             margin-bottom: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            background-color: white;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            font-size: 18px;
         }
         
-        .faq-question {
-            padding: 20px;
-            cursor: pointer;
-            position: relative;
-            font-weight: 500;
-            color: var(--primary);
-        }
-        
-        .faq-question:after {
-            content: "+";
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-        }
-        
-        .faq-answer {
-            padding: 0 20px 20px;
-            color: var(--light-text);
-        }
-        
-        /* 最終CTA */
-        .final-cta {
-            background: linear-gradient(rgba(44, 125, 80, 0.9), rgba(44, 125, 80, 0.9)), url("/api/placeholder/1200/600") center/cover;
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .final-cta-title {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-        
-        .final-cta-desc {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            font-size: 1.1rem;
-        }
-        
-        .eco-points {
-            margin-top: 50px;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .eco-points-title {
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-        
-        /* フッター */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-company {
-            flex: 2;
-            min-width: 300px;
-        }
-        
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        
-        .footer-desc {
-            color: #aaa;
-            margin-bottom: 20px;
-        }
-        
-        .footer-nav {
-            flex: 1;
-            min-width: 200px;
-        }
-        
-        .footer-heading {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .footer-heading:after {
-            content: "";
-            display: block;
-            width: 30px;
-            height: 2px;
-            background-color: var(--accent);
-            margin-top: 10px;
-        }
-        
-        .footer-links {
+        .footer-column ul {
             list-style: none;
         }
         
-        .footer-links li {
+        .footer-column ul li {
             margin-bottom: 10px;
         }
         
-        .footer-links a {
-            color: #aaa;
+        .footer-column ul li a {
+            color: #CCC;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
         
-        .footer-links a:hover {
-            color: white;
+        .footer-column ul li a:hover {
+            color: var(--white);
         }
         
-        .certificates {
-            display: flex;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .certificate {
-            width: 50px;
-            height: 50px;
-            background-color: #444;
-            border-radius: 5px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background-color: #444;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background-color: var(--primary);
-        }
-        
-        .social-link svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
-        
-        .footer-bottom {
+        .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #444;
-            color: #aaa;
-            font-size: 0.9rem;
+            padding: 20px 0;
+            background-color: #222;
+            color: #CCC;
         }
         
-        /* レスポンシブ */
+        /* レスポンシブデザイン */
         @media (max-width: 768px) {
-            .catchcopy {
-                font-size: 2rem;
-            }
-            
-            .subcopy {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .cta-buttons {
+            .header-container {
                 flex-direction: column;
-                align-items: center;
+                padding: 10px 5%;
             }
             
-            .expert-card {
-                text-align: center;
-                flex-direction: column;
+            nav {
+                margin-top: 15px;
             }
             
-            .final-cta-title {
-                font-size: 1.8rem;
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            main {
+                margin-top: 130px;
+            }
+            
+            .hero {
+                padding: 60px 5%;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .section {
+                padding: 60px 5%;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .cta-section h2 {
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- ヘッダー -->
     <header>
-        <div class="container">
-            <h1 class="catchcopy">自然の恵みで、あなたの肌を包み込む12時間持続の贅沢</h1>
-            <p class="subcopy">100%植物由来成分 × 12時間持続香りカプセル技術</p>
-            <h2 class="product-title">エコラックス ボタニカルボディソープ</h2>
-            <img src="/api/placeholder/800/400" alt="エコラックス ボタニカルボディソープ" class="product-image">
-            <div class="cta-buttons">
-                <a href="#pricing" class="cta-button primary-cta">今すぐ購入</a>
-                <a href="#sample" class="cta-button secondary-cta">無料サンプル請求</a>
-            </div>
+        <div class="header-container">
+            <div class="logo">クリーン<span>キッチン</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#haccp">HACCP対応</a></li>
+                    <li><a href="#products">商品・サービス</a></li>
+                    <li><a href="#testimonials">導入事例</a></li>
+                    <li><a href="#about">会社概要</a></li>
+                    <li><a href="#faq">よくある質問</a></li>
+                    <li><a href="#contact" class="cta-button">無料診断</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
     
-    <!-- 導入文 -->
-    <section class="intro">
-        <div class="container">
-            <p>忙しい毎日に、贅沢なバスタイムを。エコラックスが叶える、肌と地球に優しい新しいボディケア。</p>
-        </div>
-    </section>
-    
-    <!-- 商品特徴 -->
-    <section class="features" id="features">
-        <div class="container">
-            <h2 class="section-title">特徴</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8S16.4,20,12,20z M12,6c-3.3,0-6,2.7-6,6s2.7,6,6,6s6-2.7,6-6S15.3,6,12,6z M12,16c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S14.2,16,12,16z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S13.1,10,12,10z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">100%植物由来成分</h3>
-                    <p class="feature-desc">オーガニック認証済みの植物から抽出した天然成分のみ使用。合成界面活性剤、鉱物油、パラベン、シリコンは一切不使用。</p>
+    <main id="home">
+        <section class="hero">
+            <h1>HACCP対応が簡単に！小規模飲食店の衛生管理をトータルサポート</h1>
+            <p>改正食品衛生法によるHACCP義務化に対応。個人・小規模飲食店向けの最適な衛生管理セットで、安全・安心な店舗運営をサポートします。</p>
+            <a href="#products" class="cta-button">商品を見る</a>
+        </section>
+        
+        <section id="haccp" class="section haccp-info">
+            <div class="section-title">
+                <h2>HACCP義務化への対応</h2>
+                <p>2020年6月の改正食品衛生法施行により、全ての飲食店でHACCP対応が義務化されました。小規模飲食店でも対応が必要です。</p>
+            </div>
+            <div class="info-container">
+                <div class="info-item">
+                    <img src="/api/placeholder/80/80" alt="HACCPとは">
+                    <h3>HACCPとは</h3>
+                    <p>食品の安全を確保するための衛生管理手法です。原材料の受入から提供までの全工程で危害要因を分析し、重要管理点を定めて監視します。</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8S16.4,20,12,20z M12,6c-3.3,0-6,2.7-6,6s2.7,6,6,6s6-2.7,6-6S15.3,6,12,6z M12,16c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S14.2,16,12,16z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S13.1,10,12,10z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">12時間持続する香りカプセル技術</h3>
-                    <p class="feature-desc">独自開発のマイクロカプセルが肌に留まり、体温や湿度に反応して香りを徐々に放出。一日中、心地よい香りが続きます。</p>
+                <div class="info-item">
+                    <img src="/api/placeholder/80/80" alt="小規模飲食店の課題">
+                    <h3>小規模飲食店の課題</h3>
+                    <p>専門知識の不足、人手不足、コスト負担など、小規模飲食店特有の課題があります。簡易な方法でも基準を満たす対応が求められています。</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8S16.4,20,12,20z M12,6c-3.3,0-6,2.7-6,6s2.7,6,6,6s6-2.7,6-6S15.3,6,12,6z M12,16c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S14.2,16,12,16z M12,10c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S13.1,10,12,10z"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">生分解性容器95%使用</h3>
-                    <p class="feature-desc">海洋プラスチック問題に配慮した生分解性容器を採用。使用後は自然に還り、地球環境への負荷を最小限に抑えます。</p>
+                <div class="info-item">
+                    <img src="/api/placeholder/80/80" alt="衛生管理のメリット">
+                    <h3>衛生管理のメリット</h3>
+                    <p>適切な衛生管理は法令遵守だけでなく、食中毒予防、顧客信頼の獲得、従業員の意識向上などのメリットがあります。</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M12,2C6.5,2,2,6.5,2,12s4.5,10,10,10s10-4.5,10-10S17.5,2,12,2z M12,20c-4.4,0-8-3.6-8-8s3.6-8,8-8s8,3.6,8,8S16.4,20,12,20z M12,6c-3.3,0-6,2.7-6,6s2.7,6,6,6s6-2.7,6-6S15.3,6,12,6z M12,16c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S14.2,16,12,16z M12,10
+            </div>
+        </section>
+        
+        <section id="products" class="section products">
+            <div class="section-title">
+                <h2>安心の衛生管理セット</h2>
+                <p>店舗の規模や業態に合わせた最適な衛生管理セットをご用意しています。HACCP対応に必要な道具・記録用紙・マニュアルがセットになった商品です。</p>
+            </div>
+            <div class="product-cards">
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('/api/placeholder/350/200')">
+                        <span class="badge">初めての方におすすめ</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>スターターセット</h3>
+                        <p>HACCP対応の基本アイテムをセットにしました。初めて衛生管理に取り組む小規模飲食店におすすめです。</p>
+                        <ul>
+                            <li>衛生管理簡易マニュアル</li>
+                            <li>記録用紙（1年分）</li>
+                            <li>非接触体温計</li>
+                            <li>アルコール消毒液（500ml）</li>
+                            <li>調理用手袋（100枚）</li>
+                        </ul>
+                        <div class="price">¥19,800（税込）</div>
+                        <a href="#contact" class="product-button">詳細を見る</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('/api/placeholder/350/200')">
+                        <span class="badge">人気No.1</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>プレミアムセット</h3>
+                        <p>本格的な衛生管理を実現する充実のセット。専門家による導入サポート付きで安心です。</p>
+                        <ul>
+                            <li>詳細衛生管理マニュアル</li>
+                            <li>記録用紙（1年分）</li>
+                            <li>非接触体温計</li>
+                            <li>ATP検査キット（20回分）</li>
+                            <li>アルコール消毒液（1L）</li>
+                            <li>調理用手袋（200枚）</li>
+                            <li>専門家によるオンライン導入サポート（1回）</li>
+                        </ul>
+                        <div class="price">¥39,800（税込）</div>
+                        <a href="#contact" class="product-button">詳細を見る</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image" style="background-image: url('/api/placeholder/350/200')">
+                        <span class="badge">継続的な管理に</span>
+                    </div>
+                    <div class="product-content">
+                        <h3>サブスクリプションプラン</h3>
+                        <p>消耗品の定期配送と専門家サポートがセットになった月額プラン。継続的な衛生管理に最適です。</p>
+                        <ul>
+                            <li>アルコール消毒液（500ml/月）</li>
+                            <li>調理用手袋（100枚/月）</li>
+                            <li>ATP検査キット（5回分/月）</li>
+                            <li>記録用紙（月ごと更新）</li>
+                            <li>専門家によるオンラインサポート（月1回）</li>
+                            <li>緊急時サポート（24時間対応）</li>
+                        </ul>
+                        <div class="price">¥9,800（税込）/月</div>
+                        <a href="#contact" class="product-button">詳細を見る</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials" class="section testimonials">
+            <div class="section-title">
+                <h2>導入事例・お客様の声</h2>
+                <p>既に多くの小規模・個人飲食店にご利用いただいています。お客様の声をご紹介します。</p>
+            </div>
+            <div class="testimonial-container">
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img class="testimonial-image" src="/api/placeholder/60/60" alt="田中様">
+                        <div class="testimonial-name
